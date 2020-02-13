@@ -143,7 +143,6 @@ extension MapViewController: MKMapViewDelegate {
         if let annotation = annotation as? Place {
             
             let identifier = "Place"
-            
             var markerView: PlaceMarkerView
             
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? PlaceMarkerView {
