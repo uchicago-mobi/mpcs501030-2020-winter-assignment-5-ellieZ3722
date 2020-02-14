@@ -26,8 +26,11 @@ public class DataManager {
         let placeArray: NSArray? = nsDictionary?.object(forKey: "places") as? NSArray
         
         //store the favorites into the user default
-        let favorites: [String] = []
-        defaults.set(favorites, forKey:"favorites")
+        let favorites = defaults.array(forKey: "favorites")
+        if favorites == nil {
+            let array: [String] = []
+            defaults.set(array, forKey:"favorites")
+        }
         
         if let placeArray = placeArray {
             for (place) in placeArray {
